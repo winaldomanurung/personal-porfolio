@@ -2,6 +2,11 @@ import logo from "./assets/logo.svg";
 import styled from "styled-components";
 import ParallaxHeroSection from "./components/ParallaxHeroSection";
 import ContentSection from "./components/ContentSection";
+import CrossRevealSection from "./components/CrossRevealSection";
+
+import FaceOne from "../src/assets/images/faceOne.png";
+import LandscapeOne from "../src/assets/images/landscapeOne.png";
+import LandscapeTwo from "../src/assets/images/landscapeTwo.png";
 
 const StyledHeroSection = styled.section`
 position: relative;
@@ -40,6 +45,31 @@ function App() {
         text={
           "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. "
         }
+      />
+
+      <CrossRevealSection
+        face={FaceOne}
+        landscape={LandscapeOne}
+        name={"Christian Guard"}
+        job={"Founder"}
+        sentenceOne={"We only launch"}
+        sentenceTwo={"what we love"}
+        crossreveal={"xPercent"}
+      />
+      <ContentSection
+        title={"Take Care"}
+        text={
+          "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. "
+        }
+      />
+      <CrossRevealSection
+        face={FaceOne}
+        landscape={LandscapeTwo}
+        name={"Christian Guard"}
+        job={"Founder"}
+        sentenceOne={"We only launch"}
+        sentenceTwo={"what we love"}
+        crossreveal={"yPercent"}
       />
       <ContentSection
         title={"Take Care"}
