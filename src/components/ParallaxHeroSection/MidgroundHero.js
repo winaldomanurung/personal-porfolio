@@ -1,4 +1,5 @@
-import { forwardRef } from "react";
+import { forwardRef, useRef, useImperativeHandle } from "react";
+import gsap from "gsap";
 import styled from "styled-components";
 
 const StyledParallaxWrapper = styled.div`
@@ -11,8 +12,21 @@ const StyledParallaxWrapper = styled.div`
 `;
 
 const MidgroundHero = forwardRef((props, ref) => {
+  const el = useRef();
+
+  useImperativeHandle(
+    ref,
+    () => {
+      return {
+        moveTo(x, y) {
+          gsap.to(el.current, { x, y });
+        },
+      };
+    },
+    []
+  );
   return (
-    <StyledParallaxWrapper>
+    <StyledParallaxWrapper ref={el}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 625">
         <g id="LEAVE2_BACKGROUND">
           <path
