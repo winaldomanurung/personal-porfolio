@@ -18,9 +18,19 @@ function ParallaxHeroSection() {
 
   useEffect(() => {
     const onMove = ({ clientX, clientY }) => {
+      var element = document.getElementById("container");
+      var positionInfo = element.getBoundingClientRect();
+      var width = positionInfo.width;
+      // console.log(clientX, width);
+      // if (clientX > width / 2) {
       foregroundHeroRef.current.moveTo(clientX / 4, clientY / 8);
       midgroundHeroRef.current.moveTo(clientX / 8, clientY / 16);
       backgroundHeroRef.current.moveTo(clientX / 12, clientY / 24);
+      // } else {
+      //   foregroundHeroRef.current.moveTo(-clientX / 4, clientY / 8);
+      //   midgroundHeroRef.current.moveTo(-clientX / 8, clientY / 16);
+      //   backgroundHeroRef.current.moveTo(-clientX / 12, clientY / 24);
+      // }
     };
     const onLeave = () => {
       foregroundHeroRef.current.moveTo(0, 0);
@@ -37,7 +47,7 @@ function ParallaxHeroSection() {
   }, []);
 
   return (
-    <StyledSVGWrapper>
+    <StyledSVGWrapper id="container">
       <BackgroundHero ref={backgroundHeroRef} />
       <MidgroundHero ref={midgroundHeroRef} />
       <ForegroundHero ref={foregroundHeroRef} />

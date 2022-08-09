@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ParallaxHeroSection from "./components/ParallaxHeroSection";
 import ContentSection from "./components/ContentSection";
 import CrossRevealSection from "./components/CrossRevealSection";
+import ProductSection from "./components/ProductSection";
 
 import FaceOne from "../src/assets/images/faceOne.png";
 import LandscapeOne from "../src/assets/images/landscapeOne.png";
@@ -40,6 +41,7 @@ function App() {
         <StyledTitle>Back to smooth and firm skin.</StyledTitle>
         <ParallaxHeroSection />
       </StyledHeroSection>
+      <ProductSection />
       <ContentSection
         title={"Take Care"}
         text={
