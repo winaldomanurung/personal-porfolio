@@ -8,6 +8,7 @@ import ProductSection from "./components/ProductSection";
 import FaceOne from "../src/assets/images/faceOne.png";
 import LandscapeOne from "../src/assets/images/landscapeOne.png";
 import LandscapeTwo from "../src/assets/images/landscapeTwo.png";
+import Cursor from "./components/Cursor";
 
 const StyledHeroSection = styled.section`
 position: relative;
@@ -36,6 +37,7 @@ const StyledTitle = styled.h1`
 function App() {
   return (
     <>
+      <Cursor />
       <StyledHeroSection>
         <img src={logo} alt="logo" />
         <StyledTitle>Back to smooth and firm skin.</StyledTitle>
